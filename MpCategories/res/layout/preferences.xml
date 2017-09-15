@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+    	android:title="server_setting"
+    	android:key="server_setting">
+        <EditTextPreference android:key="ip_adress"
+            	android:title="ip_adress"
+            	android:summary="adresse ip du serveur ou nameServer"
+            	android:dialogTitle="Adresse ip server"
+            	android:dialogMessage="ip"
+            	android:defaultValue="10.0.2.2" />
+        <EditTextPreference android:key="port"
+            	android:title="port"
+            	android:summary="port ip adress"
+            	android:dialogTitle="port ip adress"
+            	android:dialogMessage="port"
+            	android:defaultValue="80" />
+    </PreferenceCategory>
+	<PreferenceCategory
+    	android:title="connection_setting"
+    	android:key="connection_setting">
+        <CheckBoxPreference
+            android:key="connect_to_server"
+            android:summary="connection au serveur au demarrage"
+            android:title="connection au serveur"
+            android:defaultValue="true"
+            />
+        	<ListPreference 
+        	    android:key="update_interval"
+        		android:title="intervale de maj"
+            	android:summary="definit lintervale du tps de maj"
+            	android:defaultValue="1"
+            	android:entries="@array/updateInterval"
+            	android:entryValues="@array/updateIntervalValues"
+            	android:dependency="connect_to_server"
+        	/>
+	</PreferenceCategory>
+</PreferenceScreen>
